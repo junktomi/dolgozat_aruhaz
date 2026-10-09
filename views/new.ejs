@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Új termék</title>
+</head>
+<body>
+    <form method="POST">
+        <label for="name">A termék neve</label>
+        <input type="text" name="name" id="name" placeholder="termék neve">
+        <br>
+        <br>
+
+        <label for="category">Kategória</label>
+        <input type="text" name="category" id="category" placeholder="termék neve">
+        <br>
+        <br>
+
+        <label for="price">Ár</label>
+        <input type="number" name="price" id="price" placeholder="termék neve">
+        <br>
+        <br>
+
+        <label for="stock">Raktárkészlet</label>
+        <input type="number" name="stock" id="stock" placeholder="termék neve">
+        <br>
+        <br>
+
+        <button type="submit">Felvétel</button>
+    </form>
+
+    <% if (locals.error) {%>
+        <p style="color: red;">
+            <%= error %>
+        </p>
+        <% }; %>
+    <% if (locals.success) {%>
+        <p style="color: green;">
+            Sikeres feltöltés!
+        </p>
+        <% }; %>
+
+    <a href="/">Vissza a főoldalra</a>
+
+</body>
+</html>

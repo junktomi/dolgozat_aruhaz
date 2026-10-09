@@ -4,12 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        <%= title %>
+        Terméklista
     </title>
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <h1><%= title %></h1>
-    Hello EJS!
+    <h1>Terméklista</h1>
+    
+    <a href="/filter">Termékek szűrése</a>
+    <br>
+    <a href="/new">Új termék felvétete</a>
+    <br>
+    <a href="/stats">Statisztika</a>
+    <br>
+    <table>
+        <thead>
+            <tr>
+                <th>Termék neve</th>
+                <th>Kategória</th>
+                <th>Ár</th>
+                <th>Raktárkészlet</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% adatok.forEach(element => { %>
+                <tr>
+                    <td><%= element.name %></td>
+                    <td><%= element.category %></td>
+                    <td><%= element.price %></td>
+                    <td class='<%= element.stock<5?"kiemelt":"" %>'><%= element.stock %></td>
+                </tr>
+            <% }); %>
+            <tr>
+
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>

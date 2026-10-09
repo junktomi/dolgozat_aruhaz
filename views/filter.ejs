@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termékek szűrése</title>
+</head>
+<body>
+
+    <label for="filterForm">Kategória szerinti szűrés</label>
+    <form name="filterForm">
+        <select name="category" id="filterSelect">
+            <option value=""></option>
+            <option value="elektronika">Elektronika</option>
+            <option value="ruházat">Ruházat</option>
+            <option value="könyv">Könyv</option>
+            <option value="játék">Játék</option>
+        </select>
+        <button type="submit">Szűrés</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Termék neve</th>
+                <th>Kategória</th>
+                <th>Ár</th>
+                <th>Raktárkészlet</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% adatok.forEach(element => { %>
+                <tr>
+                    <td><%= element.name %></td>
+                    <td><%= element.category %></td>
+                    <td><%= element.price %></td>
+                    <td class=<%= element.stock<5?"kiemelt":"" %>><%= element.stock %></td>
+                </tr>
+            <% }); %>
+            <tr>
+
+            </tr>
+        </tbody>
+    </table>
+    <a href="/">Vissza a főoldalra</a>
+</body>
+</html>
